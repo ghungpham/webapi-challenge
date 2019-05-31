@@ -103,10 +103,12 @@ server.post('/actions', (req, res) => {
     .then(action =>{
         if (!project_id){res.status(400).json({message: "must provide project"})
         } else {
-            if (!description){res.status(400).json({message: "must provide description"})
-            } else if (description.length > 128){res.status(400).json({message: "Characters over 128"})
-            } else {!notes}{res.status(400).json({message: "must provide description"})}
-        res.status(200).json(action)}
+            if (!description || description.length > 128){res.status(400).json({message: "Something wrong with description"})
+            } else { 
+                if(!notes){res.status(400).json({message: "must provide notes"})
+                } else {res.status(200).json(action)}
+            }
+        }
         })
     .catch(err => {
         res.status(500).json({message: "Sorry cannot be done"})
