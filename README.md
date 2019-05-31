@@ -26,13 +26,23 @@ Demonstrate your understanding of this Sprint's concepts by answering the follow
 
 - [ ] Mention two parts of Express that you learned about this week.
 
+Express is an application framework for Node.js that uses javascript to run backend server. Express uses routing for application’s endpoints to handle HTTP requests
+
 - [ ] Describe Middleware?
 
+Middleware is a function that have access to request and response object, and the next function that is used as argument in a routing method.
+
+
 - [ ] Describe a Resource?
+Resource: in the REST recommendations: everything is a resource, and each resource is accessible via unique URL, it can have multiple representations, and is done over a stateless protocol by HTTP methods.
 
 - [ ] What can the API return to help clients know if a request was successful?
 
+API return to help clients know if a request was successful by having a response status for successful request with 200 status.
+
 - [ ] How can we partition our application into sub-applications?
+We can create multiple Routers with its associated data persistence methods, and call it into the index.js file. These multiple routers, with each one has its own organized resources and HTTP methods will make its easier to see the sub-applications
+
 
 ## Project Setup
 
